@@ -22,25 +22,6 @@ public class AuthController {
     private PermissionApis permissionApis;
     /**
      * 获取所有状态正常的菜单
-     * {
-         text: "Node 1",
-         icon: "glyphicon glyphicon-stop",
-         selectedIcon: "glyphicon glyphicon-stop",
-         color: "#000000",
-         backColor: "#FFFFFF",
-         href: "#node-1",
-         selectable: true,
-         state: {
-         checked: true,
-         disabled: true,
-         expanded: true,
-         selected: true
-         },
-         tags: ['available'],
-         nodes: [
-         {},
-         ]
-     }
      * @return
      */
     @RequestMapping(value = "/loadAllPermissions",method = RequestMethod.POST)

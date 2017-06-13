@@ -59,7 +59,7 @@
                     <div class="collapse" id="setting">
                         <ul class="nav">
                             <li>
-                                <a href="javascript:void(0)" onclick="loadView('UserList','system/permission')">
+                                <a href="javascript:void(0)" onclick="AppCore.loadView('UserList','system/permission')">
                                     <i class="fa fa-users fa-lg"></i>
                                     UserList
                                 </a>
@@ -153,7 +153,9 @@
                     <script>
                         document.write(new Date().getFullYear())
                     </script>
-                    <a href="#">Creative Tim</a>, made with love for a better web
+                    <a href="javascripy:void(0)" id="author">Creative Tim</a>,
+                    made with love for a better web
+                    <a target="_blank" href="<%=path%>/static/examples/dashboard.html">Demo</a>
                 </p>
             </div>
         </footer>
@@ -182,9 +184,9 @@
 <script src="<%=path%>/static/assets/js/fullcalendar.min.js"></script>
 <script src="<%=path%>/static/assets/js/jquery.tagsinput.js"></script>
 <script src="<%=path%>/static/assets/js/material-dashboard.js"></script>
-<script src="<%=path%>/static/js/common/common.js"></script>
 <script src="<%=path%>/static/assets/js/demo.js"></script>
 <script src="<%=path%>/static/assets/core/AppCore.js"></script>
+<script src="<%=path%>/static/js/system/home.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
 

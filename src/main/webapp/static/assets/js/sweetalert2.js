@@ -514,7 +514,7 @@
           $content.appendChild(params.html.cloneNode(true))
         }
       } else {
-        $content.innerHTML = params.html || (params.text.split('\n').join('<br>'))
+        $content.innerHTML = params.html;// || (params.text.split('\n').join('<br>'))
       }
       show($content)
     } else {
