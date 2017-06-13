@@ -19,6 +19,14 @@ var AlertType = {
 };
 var AppCore = {
     /**
+     * 绑定点击事件
+     */
+    bindClick:function(id,callback){
+        $("#"+id).click(function(){
+            callback();
+        });
+    },
+    /**
      * 删除成功框
      */
     deleteSuccess:function(){
@@ -132,9 +140,9 @@ var AppCore = {
             message: msg
         },{
             type: flag,
-            timer: 100000,
+            timer: 2000,
             placement: {
-                from: "bottom",
+                from: "top",
                 align: "right"
             }
         });

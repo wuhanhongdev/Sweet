@@ -174,6 +174,7 @@
 <script src="<%=path%>/static/assets/js/jquery.bootstrap-wizard.js"></script>
 <script src="<%=path%>/static/assets/js/bootstrap-notify.js"></script>
 <script src="<%=path%>/static/assets/js/jquery.sharrre.js"></script>
+<script src="<%=path%>/static/assets/js/jquery.form.js"></script>
 <script src="<%=path%>/static/assets/js/bootstrap-datetimepicker.js"></script>
 <script src="<%=path%>/static/assets/js/jquery-jvectormap.js"></script>
 <script src="<%=path%>/static/assets/js/nouislider.min.js"></script>

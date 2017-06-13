@@ -8,6 +8,12 @@ import java.util.List;
 public class BootstrapTree {
     private String text;
     private String icon;
+    private String id;
+    private String url;
+    private Integer type;
+    private Integer status;
+    private String comment;
+    private String memo;
     private List<BootstrapTree> nodes;
 
     @Override
