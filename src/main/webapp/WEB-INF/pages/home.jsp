@@ -27,47 +27,7 @@
                     </a>
                 </div>
             </div>
-            <ul class="nav">
-                <li class="active">
-                    <a href="dashboard.html">
-                        <i class="fa fa-home fa-2x"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li>
-                    <a data-toggle="collapse" href="#pagesExamples">
-                        <i class="fa fa-image fa-2x"></i>
-                        <p>Pages
-                            <b class="caret"></b>
-                        </p>
-                    </a>
-                    <div class="collapse" id="pagesExamples">
-                        <ul class="nav">
-                            <li>
-                                <a href="pages/pricing.html">Pricing</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a data-toggle="collapse" href="#setting">
-                        <i class="fa fa-cog fa-2x"></i>
-                        <p>Settings
-                            <b class="caret"></b>
-                        </p>
-                    </a>
-                    <div class="collapse" id="setting">
-                        <ul class="nav">
-                            <li>
-                                <a href="javascript:void(0)" onclick="AppCore.loadView('UserList','system/permission')">
-                                    <i class="fa fa-users fa-lg"></i>
-                                    UserList
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+            <ul class="nav" id="siderbar"></ul>
         </div>
     </div>
     <div class="main-panel">
@@ -187,6 +147,7 @@
 <script src="<%=path%>/static/assets/js/material-dashboard.js"></script>
 <script src="<%=path%>/static/assets/js/demo.js"></script>
 <script src="<%=path%>/static/assets/core/AppCore.js"></script>
+<script src="<%=path%>/static/js/common/siderbar.tools.js"></script>
 <script src="<%=path%>/static/js/system/home.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {

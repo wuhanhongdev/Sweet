@@ -114,10 +114,16 @@ var AppCore = {
             processing: true,
             bAutoWidth: true,
             bPaginate: true,
+            sDom:'<"toolbar">frtip',
             aaSorting: [[0, "asc"]],
             sZeroRecords: "无记录",
+            serverSide: true,  //启用服务器端分页
+            searching: false,  //禁用原生搜索
             bDestroy:true,
-            ajax:url,
+            ajax:{
+                url: url,
+                type: 'POST'
+            },
             columns:columns,
             language: {
                 "lengthMenu": "每页 _MENU_ 条记录",

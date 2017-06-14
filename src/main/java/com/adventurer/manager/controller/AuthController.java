@@ -1,13 +1,17 @@
 package com.adventurer.manager.controller;
 
 import com.adventurer.manager.core.api.system.PermissionApis;
+import com.adventurer.manager.core.api.system.RoleApis;
 import com.adventurer.manager.core.model.BootstrapTree;
 import com.adventurer.manager.core.model.Permission;
 import com.adventurer.manager.core.model.Result;
+import com.adventurer.manager.core.model.Role;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -21,7 +25,8 @@ import java.util.List;
 public class AuthController {
     @Autowired
     private PermissionApis permissionApis;
-
+    @Autowired
+    private RoleApis roleApis;
     /**
      * 添加权限
      * @return
@@ -31,7 +36,16 @@ public class AuthController {
         return null;
     }
 
+    @RequestMapping(value = "/loadRoles",method = RequestMethod.POST)
+    public @ResponseBody PageInfo<Role> loadRoles(@RequestParam("pageSize") int pageSize,
+                                                  @RequestParam("pageNum") int pageNum){
+        PageInfo qiery = new PageInfo();
+        qiery.setPageSize(pageSize);
+        qiery.setPageNum(pageNum);
+        PageInfo<Role> roles = roleApis.findRolesByPage(qiery);
 
+        return roles;
+    }
     /**
      * 获取所有状态正常的菜单
      * @return
@@ -40,9 +54,9 @@ public class AuthController {
     public @ResponseBody List<BootstrapTree> loadAllPermissions(){
         //得到所有权限
         BootstrapTree tree = new BootstrapTree();
-        tree.setText("系统菜单");
+        /*tree.setText("系统菜单");
         tree.setIcon("fa fa-navicon");
-        tree.setId("root");
+        tree.setId("root");*/
         List<BootstrapTree> trees = new ArrayList<BootstrapTree>();
         BootstrapTree newTree = getTree(tree,"root");
         trees.add(newTree);

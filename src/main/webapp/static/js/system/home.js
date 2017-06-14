@@ -1,12 +1,15 @@
 $(function(){
+    init();
     initClick();
 });
-var initClick = function(){
-    $("#author").click(function(){
-        AppCore.deleteConfirmation("/auth/loadAllPermissions",null,function(obj){
-            AppCore.deleteSuccess();
-        },function(o){
-            AppCore.deleteError("您所选的记录删除失败")
-        });
+
+var init = function(){
+    //初始化右侧菜单
+    AppCore.syncLoad("/auth/loadAllPermissions",null,function(data){
+        siderBar.init("siderbar",data);
     });
+};
+
+var initClick = function(){
+
 };

@@ -7,7 +7,7 @@
         <result column="status" property="status"/>
     </resultMap>
     <select id="selectRolesByUsername" resultMap="BaseColumnMap" parameterType="java.util.Map">
-      select role.* from t_manager_role role where role.id in
+      select t_manager_role.* from t_manager_role role where t_manager_role.id in
       (select roleid from t_manager_user_role where userid=#{userId})
     </select>
 </mapper>

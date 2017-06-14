@@ -2,10 +2,14 @@ package com.adventurer.manager;
 
 import com.adventurer.manager.core.api.AppApis;
 import com.adventurer.manager.core.api.system.PermissionApis;
+import com.adventurer.manager.core.api.system.RoleApis;
 import com.adventurer.manager.core.model.App;
 import com.adventurer.manager.core.model.BootstrapTree;
 import com.adventurer.manager.core.model.Permission;
+import com.adventurer.manager.core.model.Role;
 import com.adventurer.manager.utils.GenerateSequenceUtil;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -19,6 +23,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +36,38 @@ public class AppTestCase {
     private AppApis appApis;
     @Autowired
     private PermissionApis permissionApis;
+    @Autowired
+    private RoleApis roleApis;
+
+
+    @Test
+    public void testAddRole(){
+        int count = 0;
+        for(int i=0;i<50;i++){
+            String roleId = GenerateSequenceUtil.uuid();
+            Role role = new Role();
+            role.setId(roleId);
+            role.setName("testRole"+i);
+            role.setStatus(1);
+
+            count += roleApis.saveRole(role);
+        }
+
+        System.out.println("添加成功"+count);
+    }
+
+    @Test
+    public void testRolePage(){
+        PageInfo info = new PageInfo();
+        info.setPageNum(1);
+        info.setPageSize(10);
+
+        PageInfo roles = roleApis.findRolesByPage(info);
+        List<Role> roleList = roles.getList();
+        for(Role role : roleList){
+            System.out.println(role.toString());
+        }
+    }
 
     @Test
     public void testApp(){
