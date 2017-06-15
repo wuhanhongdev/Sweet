@@ -1,4 +1,4 @@
-var siderBarHtml = "<li class='active'><a href='#'><i class='fa fa-home fa-2x'></i><p>&nbsp;&nbsp;&nbsp;&nbsp;首页&nbsp;&nbsp;&nbsp;&nbsp;</p></a></li>";
+var siderBarHtml = "";//"<li class='active'><a href='#'><i class='fa fa-home fa-2x'></i><p>&nbsp;&nbsp;&nbsp;&nbsp;首页&nbsp;&nbsp;&nbsp;&nbsp;</p></a></li>";
 var siderBar = {
     init:function(ulId,data){
         data = data[0].nodes;

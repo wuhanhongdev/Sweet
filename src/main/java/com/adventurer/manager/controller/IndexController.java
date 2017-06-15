@@ -14,12 +14,12 @@ public class IndexController {
 
     @RequestMapping("/index")
     public String index(){
-        return "home";
+        return "hplus/plus_home";
     }
 
     @RequestMapping("/login")
     public String login(){
-        return "start";
+        return "hplus/plus_login";
     }
 
     @RequestMapping("/loadView")
